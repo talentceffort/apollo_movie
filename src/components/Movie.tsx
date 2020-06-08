@@ -1,14 +1,25 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import styled from 'styled-components'
 
-interface IProps {
-  id: number
-  title: string
-  bg: string
-}
+const Container = styled.div`
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  overflow: hidden;
+  border-radius: 7px;
+`;
 
-export default ({ id, title, bg }: IProps) => (
-  <div>
-    <Link to={`/${id}`}>{id}</Link>  
-  </div>
+const Poster = styled.div`
+  background-image: url(${props => props.bg});
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center center;
+`;
+
+export default ({ id, bg }) => (
+  <Container>
+    <Link to={`/${id}`}>
+      <Poster bg={bg} />
+    </Link>
+  </Container>
 );

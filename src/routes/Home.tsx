@@ -82,15 +82,14 @@ function Home() {
       </Header>
       {loading && <Loading>Loading...</Loading>}
       <Movies>
-        {data?.apiMovies?.map(m => (
-            <Movie
-              key={m.id}
-              id={m.id}
-              title={m.name}
-              bg={m.medium_cover_image}
-            />
-          ))}
-        </Movies>
+      {data?.apiMovies?.map(m => (
+          <Movie
+            key={m.id}
+            id={m.id}
+            bg={m.medium_cover_image}
+          />
+        ))}
+      </Movies>
     </Container>
   )
 }
